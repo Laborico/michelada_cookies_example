@@ -26,7 +26,11 @@ def login():
 @app.route('/backoffice')
 def backoffice(methods=['GET']):
    if 'email' in session:
-      return render_template("backoffice.html",info={'email':session['email'],'password':session['password']}), 200
+      info_de_Sesion={
+         'email':session['email'],
+         'password':session['password']
+      }
+      return render_template("backoffice.html",info_de_Sesion=info_de_Sesion), 200
    else:
       flash('Primero debes de iniciar sesion')
       return redirect(f'/login')

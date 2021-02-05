@@ -6,17 +6,12 @@ from flask import Flask, render_template, make_response, request, redirect, sess
 
 
 app = Flask(__name__)
-app.permanent_session_lifetime = datetime.timedelta(days=365)
-app.secret_key = "hD4GbkeacT3KXuwZ"
+app.permanent_session_lifetime = datetime.timedelta(days=1)
+app.secret_key = 'Z9GP$75[q-sf9Fi=.!>r$X"sYlTzZ"vZP8_#b<Bt~nFG?%klFe=|l?p"k|2$;9*'
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-   """
-   Home
-   :return:
-   :rtype:
-   """
    if request.method == 'POST':
       email = request.form.get('email')
       password = request.form.get('password')

@@ -1,19 +1,27 @@
-<html>
-    <head>
-        <title>Mi login</title>
-        <link rel="stylesheet"
-              href="{{ url_for('static', filename='login.css') }}">
-    </head>
-    <body>
-        <div id="content">
-            <form action="{{ url_for('login') }}" method="post">
-                <label>Usuario</label>
-                <input type="email" name="email" />
-                <label>Contraseña</label>
-                <input type="password" name="password"/>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        <script src="{{ url_for('static', filename='login.js') }}"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body style="background-image:url({{ url_for('static', filename='img/peaceful.jpeg') }})">
+    <div id="content">
+
+        <h1 id="login-h1">Login</h1>
+
+        <form action="{{ url_for('login') }}" method="post" id="login-form">
+
+            <label class="login-form-label">Correo:</label>
+            <input type="email" name="email" class="login-form-field" placeholder="Correo"/>
+            <label class="login-form-label">Contraseña:</label>
+            <input type="password" name="password" class="login-form-field" placeholder="Contraseña"/>
+            <button type="submit" id="login-form-submit">Login</button>
+
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
 </html>

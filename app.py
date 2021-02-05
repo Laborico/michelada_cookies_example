@@ -20,7 +20,9 @@ def login():
    if request.method == 'POST':
       email = request.form.get('email')
       password = request.form.get('password')
-      return redirect(f'/backoffice/?email={email}&password={password}')
+      if email != '' and password !='':
+         session['email']=email
+         return redirect(f'/backoffice')
 
    return render_template("login.html"), 200
 

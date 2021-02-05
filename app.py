@@ -42,6 +42,10 @@ def logout():
     session.pop('password')         
     return redirect('/login')
 
+@app.route('/')
+def home():
+    return redirect(f'/backoffice')
+
 if __name__ == '__main__':
    app.run(host="0.0.0.0", port=8080)
 

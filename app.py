@@ -22,6 +22,7 @@ def login():
       password = request.form.get('password')
       if email != '' and password !='':
          session['email']=email
+         session['password']=password
          return redirect(f'/backoffice')
 
    return render_template("login.html"), 200
@@ -29,8 +30,17 @@ def login():
 
 @app.route('/backoffice')
 def backoffice(methods=['GET']):
-   return render_template("backoffice.html"), 200
 
+   if 'email' in session:
+      return render_template("backoffice.html",info={'email':session['email'],'password':session['password']}), 200
+   else:
+       return redirect(f'/login')
+
+@app.route('/logout')
+def logout():
+    session.pop('email')         
+    session.pop('password')         
+    return redirect('/login')
 
 if __name__ == '__main__':
    app.run(host="0.0.0.0", port=8080)

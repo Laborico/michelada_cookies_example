@@ -2,7 +2,7 @@
 
 import datetime
 
-from flask import Flask, render_template, make_response, request, redirect, session
+from flask import Flask, render_template, make_response, request, redirect, session, flash
 
 
 app = Flask(__name__)
@@ -30,11 +30,11 @@ def login():
 
 @app.route('/backoffice')
 def backoffice(methods=['GET']):
-
    if 'email' in session:
       return render_template("backoffice.html",info={'email':session['email'],'password':session['password']}), 200
    else:
-       return redirect(f'/login')
+      flash('Primero debes de iniciar sesion')
+      return redirect(f'/login')
 
 @app.route('/logout')
 def logout():

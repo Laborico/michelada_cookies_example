@@ -15,7 +15,7 @@ body {
     margin-bottom: 0px;
 }
 
-#content {
+#content-login {
     width: 20%;
     height: 50%;
     display: grid;
@@ -70,9 +70,65 @@ body {
     font-size: 20px;
 }
 
+
+#body-office{
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#content-office {
+    width: 40%;
+    height: 90%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#content-office > p{
+    font-size: 20px;
+    color: white;
+}
+
+#content-office > h1{
+    color: white;
+}
+
+#video {
+    width: 560px;
+    height:315px;
+}
+
+#btn-logout {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
 @media only screen and (max-width: 750px){
-    #content {
+    #content-login  {
         width: 80%;
         height: 50%;
     }
+
+    #video {
+        width: 360px;
+        height:315px;
+    }
  }
+
+ @media only screen and (max-width: 1500px){
+    #content-office {
+        width: 90%;
+    }
+}

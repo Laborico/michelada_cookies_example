@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backoffice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-<body>
+<body id="body-office" style="background-image:url({{ url_for('static', filename='img/back.jpg') }})">
+    <div id="content-office">
 
-    <h1>Hola, {{ info['email'].split('@')[0]}} ! </h1>
-    <p>El correo que usaste: {{ info['email'] }}</p>
-    <p>La contraseña que usaste: {{ info['password'] }}</p>
+        <h1>Hola, {{ info['email'].split('@')[0]}} ! </h1>
+        <p>El correo que usaste: {{ info['email'] }}</p>
+        <p>La contraseña que usaste: {{ info['password'] }}</p>
 
-    <a href=logout >
-        <button>Cerrar Sesion</button>
-    </a>
+        <iframe id="video"
+            src="https://www.youtube.com/embed/6ktnrKG8uq4?autoplay=1&mute=1" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
 
+        <a href=logout >
+            <button id="btn-logout">Cerrar Sesion</button>
+        </a>
+
+
+    </div>
 </body>
-</html>
+</html> 

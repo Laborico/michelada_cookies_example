@@ -10,9 +10,9 @@
 <body id="body-office" style="background-image:url({{ url_for('static', filename='img/back.jpg') }})">
     <div id="content-office">
 
-        <h1>Hola, {{ info['email'].split('@')[0]}} ! </h1>
-        <p>El correo que usaste: {{ info['email'] }}</p>
-        <p>La contraseña que usaste: {{ info['password'] }}</p>
+        <h1>Hola, {{ Info_de_user['email'].split('@')[0]}} ! </h1>
+        <p>El correo que usaste: {{ Info_de_user['email'] }}</p>
+        <p>La contraseña que usaste: {{ Info_de_user['password'] }}</p>
 
         <iframe id="video"
             src="https://www.youtube.com/embed/6ktnrKG8uq4?autoplay=1&mute=1" 
